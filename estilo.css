@@ -1,0 +1,592 @@
+/* === ESTILOS GENERALES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+body {
+  background-color: #f8f5f0;
+  color: #1a1a2e;
+}
+
+.oculto { display: none !important; }
+.visible { display: block; }
+
+/* === PANTALLA DE INICIO DE SESIÓN === */
+.pantalla-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fef9f9 0%, #f5eeee 100%);
+}
+
+.caja-login {
+  background: white;
+  padding: 48px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(139, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* TU LOGOTIPO GRANDE */
+.logo-medpharm {
+  margin-bottom: 32px;
+}
+
+.logo-medpharm svg {
+  width: 140px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.logo-medpharm h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0f1e3d;
+  letter-spacing: 2px;
+  font-family: 'Georgia', serif;
+}
+
+.subtitulo-login {
+  color: #6b7280;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.formulario-login {
+  text-align: left;
+}
+
+.formulario-login label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.formulario-login input {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+.formulario-login input:focus {
+  outline: none;
+  border-color: #d32f2f;
+}
+
+.boton-principal {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #d32f2f 0%, #b71c1c 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 16px;
+}
+
+.boton-principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(179, 0, 0, 0.3);
+}
+
+.mensaje-error {
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.ayuda {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.ayuda strong {
+  color: #d32f2f;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.contenedor-principal {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* === MENÚ LATERAL === */
+.menu-lateral {
+  width: 260px;
+  background: linear-gradient(180deg, #0f1e3d 0%, #0a1629 100%);
+  color: white;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* LOGO PEQUEÑO EN EL MENÚ */
+.logo {
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.logo-medpharm-chico {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.logo-medpharm-chico svg {
+  width: 36px;
+  height: auto;
+}
+
+.logo-medpharm-chico h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+  font-family: 'Georgia', serif;
+}
+
+.logo p {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-left: 46px;
+}
+
+.navegacion {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 12px;
+}
+
+.boton-menu {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.boton-menu:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.boton-menu.activo {
+  background: white;
+  color: #b71c1c;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.pie-menu {
+  margin-top: auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.iniciales {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.usuario p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.usuario small {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.boton-salir {
+  background: rgba(211, 47, 47, 0.15);
+  color: #ffcdd2;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+  margin-bottom: 10px;
+}
+
+.boton-salir:hover {
+  background: rgba(211, 47, 47, 0.3);
+  color: white;
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.contenido {
+  flex: 1;
+  padding: 32px;
+  background: #faf6f0;
+  overflow-y: auto;
+}
+
+.pantalla {
+  display: none;
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pantalla.visible {
+  display: block;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fecha {
+  color: #78716c;
+  font-size: 14px;
+}
+
+.alertas-cabecera {
+  display: flex;
+  gap: 10px;
+}
+
+.alerta-roja {
+  background: #fee2e2;
+  color: #b71c1c;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.alerta-amarilla {
+  background: #fef3c7;
+  color: #b45309;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 26px;
+  color: #1c1917;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  color: #78716c;
+  margin-bottom: 24px;
+}
+
+.alerta-general {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* === TARJETAS === */
+.tarjetas-resumen, .resumen-vencimientos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.tarjeta {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-left: 4px solid;
+}
+
+.tarjeta.azul { border-color: #1e40af; }
+.tarjeta.azul h3 { color: #1e40af; }
+.tarjeta.roja { border-color: #d32f2f; }
+.tarjeta.roja h3 { color: #b71c1c; }
+.tarjeta.amarilla { border-color: #f59e0b; }
+.tarjeta.amarilla h3 { color: #b45309; }
+.tarjeta.gris { border-color: #9ca3af; }
+.tarjeta.gris h3 { color: #6b7280; }
+
+.tarjeta h3 {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.tarjeta p {
+  font-size: 13px;
+  color: #78716c;
+}
+
+/* === FORMULARIOS === */
+.formulario-agregar {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.formulario-agregar h3 {
+  margin-bottom: 20px;
+  color: #1c1917;
+}
+
+.form-datos label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+}
+
+.form-datos input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-datos input:focus {
+  outline: none;
+  border-color: #d32f2f;
+}
+
+.fila-form-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.botones-form {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.boton-secundario {
+  padding: 10px 20px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.boton-primario {
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #d32f2f, #b71c1c);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+}
+
+/* === TABLAS === */
+.tabla-contenedor {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-bottom: 20px;
+}
+
+.tabla-contenedor h3 {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #374151;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #9ca3af;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+}
+
+.ok { color: #16a34a; font-weight: 600; }
+.bajo { color: #f59e0b; font-weight: 600; }
+.sin-stock { color: #ef4444; font-weight: 600; }
+.vencido { color: #dc2626; font-weight: 700; }
+
+.btn-eliminar {
+  background: #fef2f2;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* === BUSCADOR === */
+.buscador-filtros {
+  margin-bottom: 20px;
+}
+
+.buscador {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* === PROVEEDORES === */
+.grid-proveedores {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-proveedor {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative;
+}
+
+.iniciales-proveedor {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #d32f2f, #b71c1c);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.estado-proveedor {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.tarjeta-proveedor h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1c1917;
+}
+
+.tarjeta-proveedor p {
+  font-size: 14px;
+  color: #57534e;
+  margin-bottom: 6px;
+}
+
+.btn-eliminar-prov {
+  margin-top: 12px;
+  background: #fef2f2;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #b71c1c;
+  font-weight: 600;
+}
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 900px) {
+  .dos-columnas, .grid-proveedores, .tarjetas-resumen, .resumen-vencimientos {
+    grid-template-columns: 1fr;
+  }
+  .fila-form-doble {
+    grid-template-columns: 1fr;
+  }
+  .menu-lateral {
+    width: 220px;
+  }
+  .contenido {
+    padding: 20px;
+  }
+}

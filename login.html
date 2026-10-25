@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDPHARM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .tarjeta {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 { color: #c00; margin-bottom: 8px; }
+        .sub { color: #666; margin-bottom: 30px; }
+        label { display: block; text-align: left; margin: 15px 0 5px; font-weight: bold; }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #c00;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover { background: #a00; }
+        .ayuda { margin-top: 20px; color: #888; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="tarjeta">
+        <h1>MEDPHARM</h1>
+        <p class="sub">Control de Inventario y vencimiento Farmacéutico</p>
+
+        <form action="validar_usuario.php" method="POST" id="formLogin">
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" value="Admin">
+
+            <label for="codigo">Código de Acceso</label>
+            <input type="password" id="codigo" name="codigo" value="admin123">
+
+            <button type="submit" id="btnIngresar">Ingresar al Sistema</button>
+        </form>
+
+        <p class="ayuda">Código de prueba: admin123</p>
+    </div>
+
+    <script>
+        // Confirmar que el formulario funciona
+        const form = document.getElementById('formLogin');
+        form.addEventListener('submit', function(e) {
+            console.log('Formulario enviado');
+            // NO quitar el envío — solo confirmar
+        });
+    </script>
+</body>
+</html>
